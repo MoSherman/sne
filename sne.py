@@ -34,24 +34,29 @@ for i in names:
     #givers.append(name)
     #givers.append(email)
 
-print givers
+#print givers[0][0]
 
-#for i in receivers:
-    #receiver = i[0]
-    #for i in givers:
+for i in receivers:
+    receiver = i
+    #print receiver + "R"
+    for i in givers:
+        giver = i[0]
+        if giver != receiver:
+            print str(giver) + "g, " + str(receiver) + "r end"
         #giver = i[0]
         #email2 = i[1]
-    #if receiver != giver:
-        #receivers.remove(receiver)
-        #target = open(giver, 'w')
-        #text = "You got " + receiver + " in the Secret Name Exchange! Your email is: " + email2
-        #target.write(text)
-        #target.close
-    #elif receiver == giver:
-        #for i in receivers:
-            #receiver = i[4][0]
-    #else:
-        #print "That doesn't seem to have worked!"
+        #print giver + "G"
+        #if receiver != giver:
+            #receivers.remove(receiver)
+            #target = open(giver, 'w')
+            #text = "You got " + str(receiver) + " in the Secret Name Exchange! Your email is: " + str(email2)
+            #target.write(text)
+            #target.close
+        #elif receiver == giver:
+            #for i in receivers:
+                #receiver = i[4][0]
+        #else:
+            #print "That doesn't seem to have worked!"
     
 
 
