@@ -4,17 +4,120 @@
 import csv # importing csv module
 import sys #importing sys module for .txt creation
 import os  # Import os
+import random
 
 
 path  = os.path.expanduser('~/Projects/sne/names.csv') # Specifying path to names emails
-names = csv.reader(file(path)) # Creating a list of the names and emails                                       
+names = csv.reader(file(path)) # Creating a list of the names and emails  
+names2 = csv.reader(file(path)) # Creating a duplicate of the list
 
-# Assign login details to connection variables
-for i in names:
-    name    = i[0]
-    email   = i[1]
+receivers = []
+givers = []
+
+#creating receivers list in a random order
+for i in names2:
     
-    print name + ": " + email
+    name = i[0]
+    receivers.append(name)
+    
+random.shuffle(receivers,random.random)
+
+#creating givers list in order that was given with emails
+for i in names:
+    
+    name = i[0]
+    email = i[1]
+    givers.append([name,email])
+    #combi = name + ',' + email
+    #givers = [[name,email]]        
+    #givers = [name,email]
+    #givers.append(name)
+    #givers.append(email)
+
+print givers
+
+#for i in receivers:
+    #receiver = i[0]
+    #for i in givers:
+        #giver = i[0]
+        #email2 = i[1]
+    #if receiver != giver:
+        #receivers.remove(receiver)
+        #target = open(giver, 'w')
+        #text = "You got " + receiver + " in the Secret Name Exchange! Your email is: " + email2
+        #target.write(text)
+        #target.close
+    #elif receiver == giver:
+        #for i in receivers:
+            #receiver = i[4][0]
+    #else:
+        #print "That doesn't seem to have worked!"
+    
+
+
+
+
+
+
+
+
+
+#for i in names:
+    
+    #giver = i[0]
+    #email = i[1]
+    #name =random.choice(names2)
+    
+    #if giver != name:
+        
+        #names2.remove(name)
+        #target = open(giver, 'w')
+        #text = "You got " + name + " in the Secret Name Exchange! Your email is: " + email
+        #target.write(text)
+        #target.close
+    
+    #elif giver == name:
+        
+        #name = random.choice(names2)
+    
+    #else:
+        
+        #print "That doesn't seem to have worked!"
+
+
+
+#for i in names2:
+    #name = random.choice(names2)
+    #names2.remove(name)
+    
+    #for i in names:
+        #giver = i[0]
+        #email = i[1]
+        
+        #if giver != name:
+            #names2.remove(name)
+            #target   = open(giver, 'w')
+            #text     = "You got " + name + " in the Secret Name Exchange! Your email is: " + email
+            #target.write(text)
+            #target.close
+        
+        #elif giver == name:
+            
+            #for i in names2:
+                #name = random.choice(names2)
+        
+        #else:
+            #print "That doesn't seem to have worked..."
+
+
+#for i in names:
+    #giver    = i[0]
+    #email    = i[1]
+    #reciever = random.choice
+    #target   = open(giver, 'w')
+    #text     = "You got " + receiver + " in the Secret Name Exchange! Your email is: " + email
+    #target.write(text)
+    #target.close
 
 
 
