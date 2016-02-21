@@ -28,24 +28,30 @@ for i in names:
     name = i[0]
     email = i[1]
     givers.append([name,email])
-    #combi = name + ',' + email
-    #givers = [[name,email]]        
-    #givers = [name,email]
-    #givers.append(name)
-    #givers.append(email)
 
-#print givers[0][0]
+
 
 for i in receivers:
     receiver = i
+for i in givers:
+    giver = i[0]
+    if giver != receiver:
+        print str(giver) + "g, " + str(receiver) + "r end"
+
+
+            
+            
+            
+            
+            
+#for i in receivers:
+    #receiver = i
     #print receiver + "R"
-    for i in givers:
-        giver = i[0]
-        if giver != receiver:
-            print str(giver) + "g, " + str(receiver) + "r end"
+    #for i in givers:
         #giver = i[0]
-        #email2 = i[1]
-        #print giver + "G"
+        #if giver != receiver:
+            #print str(giver) + "g, " + str(receiver) + "r end"
+        
         #if receiver != giver:
             #receivers.remove(receiver)
             #target = open(giver, 'w')
